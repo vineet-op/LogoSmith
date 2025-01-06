@@ -22,6 +22,9 @@ const Create = () => {
         }))
     }
 
+    console.log(formData);
+
+
     return (
         <div className='mt-28 p-10  border rounded-xl 2xl:mx-72'>
             {steps == 1 ?
@@ -29,16 +32,16 @@ const Create = () => {
                 <LogoTitle onHandleInputChange={(v) => onHandleInputChange('title', v)} /> :
 
                 steps == 2 ?
-                    <LogoInfo /> :
+                    <LogoInfo onHandleInputChange={(v) => onHandleInputChange('info', v)} /> :
 
                     steps == 3 ?
-                        <LogoColorPallete /> :
+                        <LogoColorPallete onHandleInputChange={(v) => onHandleInputChange('color', v)} /> :
 
                         steps == 4 ?
-                            <LogoDesigns /> :
+                            <LogoDesigns onHandleInputChange={(v) => onHandleInputChange('design', v)} /> :
 
                             steps == 5 ?
-                                <LogoIdea /> :
+                                <LogoIdea onHandleInputChange={(v) => onHandleInputChange('idea', v)} /> :
                                 null
             }
 
