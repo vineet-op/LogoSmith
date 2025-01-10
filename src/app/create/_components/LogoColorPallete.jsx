@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import LogoDescription from './LogoDescription'
 import colorPalettes from "../_data/Colors"
 
-const LogoColorPallete = ({ onHandleInputChange }) => {
+const LogoColorPallete = ({ onHandleInputChange, formData }) => {
 
-    const [selectedOptions, setselectedOptions] = useState()
+    const [selectedOptions, setselectedOptions] = useState(formData?.color)
 
     return (
         <div>

@@ -3,9 +3,9 @@ import LogoDescription from './LogoDescription';
 import logoThemes from "../_data/logoThemes";
 import Image from 'next/image';
 
-const LogoDesigns = ({ onHandleInputChange }) => {
+const LogoDesigns = ({ onHandleInputChange, formData }) => {
 
-    const [LogoTheme, setLogoTheme] = useState()
+    const [LogoTheme, setLogoTheme] = useState(formData?.design?.title)
 
     return (
         <div className='px-10'>
