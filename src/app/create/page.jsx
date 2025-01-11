@@ -22,7 +22,7 @@ const Create = () => {
         }))
     }
 
-    console.log(formData);
+    // console.log(formData);
 
 
     return (

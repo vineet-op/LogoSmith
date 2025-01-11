@@ -6,6 +6,7 @@ import axios from 'axios';
 import Prompt from "../_data/Prompt";
 
 const LogoIdea = ({ formData, onHandleInputChange }) => {
+
     const [Ideas, setIdeas] = useState([]);
     const [loading, SetLoading] = useState(false);
     const [selectedOptions, SetselectedOptions] = useState()
@@ -33,6 +34,8 @@ const LogoIdea = ({ formData, onHandleInputChange }) => {
             SetLoading(false);
         }
     };
+
+    localStorage.setItem("formData", JSON.stringify(formData))
 
     return (
         <div>

@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server"
-import { AiModel } from "../../Configs/AiModel"
+import { AiLogoPrompt } from "../../Configs/AiModel"
 
 export async function POST(req) {
     const { prompt } = await req.json()
 
     try {
-        const result = await AiModel.sendMessage(prompt)
-        return NextResponse.json(JSON.parse(result.response.text()))
+        const AiPromptResult = await AiLogoPrompt.sendMessage(prompt)
+        return NextResponse.json(JSON.parse(AiPromptResult.response.text()).prompt)
     } catch (error) {
         return NextResponse({
             error: error

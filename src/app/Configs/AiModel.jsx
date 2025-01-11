@@ -38,7 +38,23 @@ export const AiModel = model.startChat({
     ],
 });
 
-// const result = await chatSession.sendMessage("INSERT_INPUT_HERE");
-// console.log(result.response.text());
+export const AiLogoPrompt = model.startChat({
+    generationConfig,
+    history: [
+        {
+            role: "user",
+            parts: [
+                { text: " Generate a text prompt to create Logo for Logo Title/Brand name : Coffee Shop,with description: A logo for a coffee shop like starbucks, with Color combination of Forest Whisper, also include the App Logo and include Sleek Coffee Mug Icon design idea and Referring to this Logo Prompt:A sleek and minimalist app logo with a modern icon and gradient colors, designed for mobile or web applications.  Give me result in JSON portal with prompt field only" },
+            ],
+        },
+        {
+            role: "model",
+            parts: [
+                { text: "```json\n{\n  \"prompt\": \"Create a logo for a coffee shop named 'Coffee Shop', styled similarly to Starbucks but with a 'Forest Whisper' color palette. The design should include a sleek coffee mug icon. Additionally, generate an app logo version that is sleek and minimalist with a modern icon, incorporating gradient colors suitable for mobile and web applications. Ensure the coffee shop logo and app logo maintain a cohesive visual identity, referencing a modern design aesthetic.\"\n}\n```\n" },
+            ],
+        },
+    ],
+});
+
 
 
