@@ -6,6 +6,8 @@ import axios from 'axios';
 
 const GenerateLogo = () => {
     const [storageData, setStorageData] = useState(null);
+    const [base64Image, setBase64Image] = useState()
+    const [loading, setloading] = useState(false)
 
     useEffect(() => {
         // Retrieve the stored data from localStorage
@@ -40,25 +42,33 @@ const GenerateLogo = () => {
 
         // console.log("Real Prompt", PROMPT);
 
-        const PromptResponse = await axios.post('/api/ai-logo-model', {
-            prompt: PROMPT
-        })
+        try {
+            setloading(true)
+            const PromptResponse = await axios.post('/api/ai-logo-model', {
+                prompt: PROMPT
+            })
+            setBase64Image(PromptResponse.data.image)
+            setloading(false)
+        }
+        catch (error) {
+            console.error("Error fetching the image:", error);
+        }
 
-        console.log("PromptResponse", PromptResponse.data);
 
     };
 
     return (
         <div>
             <h1>Logo Generator</h1>
-            {storageData ? (
-                <div>
-                    <h2>Retrieved Data:</h2>
-                    <pre>{JSON.stringify(storageData, null, 2)}</pre>
-                </div>
-            ) : (
-                <p>No data found in localStorage.</p>
-            )}
+            {
+                loading ? (
+                    <div className='text-3xl'>Loading ... </div>
+                ) : (
+                    <div>
+                        <img src={base64Image} alt={"Logo Image"} />
+                    </div>
+                )
+            }
         </div>
     );
 };
