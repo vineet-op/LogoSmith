@@ -15,7 +15,7 @@ export async function POST(req) {
             output,
             {
                 headers: {
-                    Authorization: "Bearer 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",
+                    Authorization: "Bearer " + process.env.HUGGING_FACE_API,
                     "Content-Type": "application/json",
                 },
                 responseType: "arraybuffer",
