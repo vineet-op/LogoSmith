@@ -11,7 +11,6 @@ const GenerateLogo = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        // Retrieve the stored data from localStorage
         try {
             const data = localStorage.getItem("formData");
             if (data) {
@@ -51,6 +50,8 @@ const GenerateLogo = () => {
         }
         catch (error) {
             console.error("Error fetching the image:", error);
+            console.log(error);
+            console.log(error.message);
         }
     };
 
@@ -76,7 +77,7 @@ const GenerateLogo = () => {
                     <div className='rounded-lg w-96 h-96 flex flex-col gap-2'>
                         <h1 className='font-mono text-xl text-center rounded-lg font-bold text-purple-500'>Here is your logo by AI</h1>
                         <img src={base64Image} alt={"Logo Image"} className='rounded-lg w-[100%]' />
-                        <Button onClick={downloadImage} className="mt-4 font-mono">Download Logo</Button>
+                        <Button onClick={downloadImage}>Download</Button>
                     </div>
                 )
             }

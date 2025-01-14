@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import DotPattern from "@/components/ui/dot-pattern";
 import React from "react";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
-import { ArrowRightIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const Hero = () => {
