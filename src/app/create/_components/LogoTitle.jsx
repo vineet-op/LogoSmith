@@ -1,13 +1,9 @@
-'use client'
 
 import React, { useState } from 'react'
 import LogoDescription from "./LogoDescription"
-import { useSearchParams } from 'next/navigation'
+
 
 const LogoTitle = ({ onHandleInputChange, formData }) => {
-
-    const searchParams = useSearchParams()
-    const [LogoTitle, setLogoTitle] = useState(searchParams?.get('title') ?? '')
 
     return (
 
@@ -17,7 +13,6 @@ const LogoTitle = ({ onHandleInputChange, formData }) => {
                 type="text"
                 placeholder='Enter Logo Title'
                 className='mx-10 mt-5 p-3 rounded-lg w-[70%] border font-mono'
-                // defaultValue={LogoTitle}
                 value={formData?.title}
                 onChange={(e) => onHandleInputChange(e.target.value)}
             />
