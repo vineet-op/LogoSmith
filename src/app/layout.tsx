@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-`}
       >
         <Provider>
-          <DotPattern className="absolute inset-0 bg-black opacity-2 -z-10" />
+          <DotPattern className="inset-0 bg-purple-900 opacity-1 -z-10" />
           {children}
         </Provider>
       </body>

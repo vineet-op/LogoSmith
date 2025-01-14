@@ -54,26 +54,23 @@ const GenerateLogo = () => {
         catch (error) {
             console.error("Error fetching the image:", error);
         }
-
-
     };
 
     return (
-        <div>
-            <h1>Logo Generator</h1>
+        <div className='flex justify-center items-center flex-col'>
             {
                 loading ? (
                     /* From Uiverse.io by themrsami */
-                    <div class="flex justify-center items-center h-screen">
+                    <div class="flex justify-center items-center h-full">
                         <div class="animate-spin ease-linear rounded-full w-10 h-10 border-t-2 border-b-2 border-purple-500"></div>
                         <div class="animate-spin ease-linear rounded-full w-10 h-10 border-t-2 border-b-2 border-red-500 ml-3"></div>
                         <div class="animate-spin ease-linear rounded-full w-10 h-10 border-t-2 border-b-2 border-blue-500 ml-3"></div>
                     </div>
 
                 ) : (
-                    <div>
-                        <img src={base64Image} alt={"Logo Image"} />
-                        <Button>Download</Button>
+                    <div className='rounded-lg w-96 h-96 mt-5'>
+                        <h1 className='mb-10 font-mono text-xl p-3 text-center rounded-lg font-medium text-purple-500 bg-black'>Here is your logo by AI</h1>
+                        <img src={base64Image} alt={"Logo Image"} className='rounded-lg w-[100%]' />
                     </div>
                 )
             }
