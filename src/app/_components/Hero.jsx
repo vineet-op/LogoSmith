@@ -1,43 +1,42 @@
-'use client'
+"use client";
 
-import { Button } from '@/components/ui/button'
-import Link from 'next/link';
-import React, { useState } from 'react'
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import DotPattern from "@/components/ui/dot-pattern";
+import React from "react";
+import AnimatedShinyText from "@/components/ui/animated-shiny-text";
+import { ArrowRightIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
-
-    const [LogoTitle, SetLogoTitle] = useState('');
+    const router = useRouter();
 
     return (
         <main>
-            <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-                <div className="container px-4 md:px-6">
-                    <div className="flex flex-col items-center space-y-4 text-center text-white">
-                        <div className="space-y-2">
-                            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                                Create Stunning Logos in Minutes
-                            </h1>
-                            <p className="mx-auto max-w-[700px] text-xl md:text-2xl">
-                                Unleash your brand's potential with AI-powered logo design. No design skills required.
-                            </p>
-                        </div>
-                        <div className="space-x-4">
-                            <input value={LogoTitle}
-                                placeholder='Enter Logo Description'
-                                className='p-2 mt-2 rounded-lg w-64 text-black outline-none'
-                                onChange={(e) => SetLogoTitle(e.target.value)}
-                            />
-                            <Link href={'/create?title=' + LogoTitle}>
-                                <Button size="lg" className="text-lg font-bold bg-purple-600 text-white hover:text-gray-100">
-                                    Start Designing
-                                </Button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    )
-}
+            <div className="relative flex h-screen w-screen justify-center overflow-hidden rounded-lg bg-black p-20 md:shadow-xl">
+                <DotPattern className="absolute inset-0 opacity-20" />
+                <div className="relative flex flex-col items-center gap-4 z-10">
+                    <h1 className="text-white text-6xl font-bold pt-44 text-center font-mono">
+                        LogoSmith AI
+                    </h1>
+                    <AnimatedShinyText
+                        shimmerWidth={100}
+                        className="inline-flex items-center justify-center px-4  py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400"
+                    >
+                        <div className="whitespace-nowrap text-lg text-neutral-100 font-mono text-center">✨ Unleash your brand's identity with custom AI logos.</div>
+                    </AnimatedShinyText>
 
-export default Hero
+                    <Button
+                        aria-label="Create a logo"
+                        onClick={() => router.push("/create")}
+                        className="py-5 bg-purple-400 font-mono hover:bg-purple-300 w-full text-black mt-10 text-md "
+                    >
+                        Create
+                    </Button>
+                </div>
+            </div>
+        </main>
+    );
+};
+
+export default Hero;

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Prompt from "../create/_data/Prompt";
 import axios from 'axios';
+import { Button } from '@/components/ui/button';
 
 const GenerateLogo = () => {
     const [storageData, setStorageData] = useState(null);
@@ -62,10 +63,17 @@ const GenerateLogo = () => {
             <h1>Logo Generator</h1>
             {
                 loading ? (
-                    <div className='text-3xl'>Loading ... </div>
+                    /* From Uiverse.io by themrsami */
+                    <div class="flex justify-center items-center h-screen">
+                        <div class="animate-spin ease-linear rounded-full w-10 h-10 border-t-2 border-b-2 border-purple-500"></div>
+                        <div class="animate-spin ease-linear rounded-full w-10 h-10 border-t-2 border-b-2 border-red-500 ml-3"></div>
+                        <div class="animate-spin ease-linear rounded-full w-10 h-10 border-t-2 border-b-2 border-blue-500 ml-3"></div>
+                    </div>
+
                 ) : (
                     <div>
                         <img src={base64Image} alt={"Logo Image"} />
+                        <Button>Download</Button>
                     </div>
                 )
             }

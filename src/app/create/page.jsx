@@ -44,7 +44,7 @@ const Create = () => {
 
 
     return (
-        <div className='mt-28 p-10  border rounded-xl 2xl:mx-72'>
+        <div className='mt-28 p-10 border rounded-xl 2xl:mx-72 bg-purple-200'>
             {
                 steps <= 5 ? (
                     renderStepContent()
@@ -56,12 +56,12 @@ const Create = () => {
             }
             <div className="flex justify-between items-center mt-20 px-10">
                 {steps > 1 && steps <= 5 && (
-                    <Button onClick={() => setSteps((prev) => prev - 1)} variant="outline">
+                    <Button className='font-mono bg-purple-300' onClick={() => setSteps((prev) => prev - 1)} variant="outline">
                         <CircleArrowLeft /> Previous
                     </Button>
                 )}
                 {steps <= 5 ? (
-                    <Button onClick={() => setSteps((prev) => prev + 1)} className="bg-pink-600">
+                    <Button onClick={() => setSteps((prev) => prev + 1)} className="font-mono bg-purple-300" variant="outline">
                         Next <CircleArrowRight />
                     </Button>
                 ) : null}

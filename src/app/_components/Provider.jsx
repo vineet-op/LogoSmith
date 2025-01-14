@@ -3,8 +3,8 @@ import Header from "./Header"
 
 const Provider = ({ children }) => {
     return (
-        <div>
-            <Header />
+        <div className=''>
+            {/* <Header /> */}
             {children}
         </div>
     )

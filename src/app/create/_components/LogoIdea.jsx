@@ -63,7 +63,7 @@ const LogoIdea = ({ formData, onHandleInputChange }) => {
                                 SetselectedOptions(item);
                                 onHandleInputChange(item)
                             }}
-                                className={`${selectedOptions == item && 'border-2 border-red-600'} bg-neutral-200 px-4 my-1 cursor-pointer hover:bg-pink-500 hover:text-white rounded-full`}
+                                className={`${selectedOptions == item && 'border-2 border-red-600'} bg-neutral-200 px-4 my-1 cursor-pointer hover:bg-purple-400 hover:text-white rounded-full`}
                             >
                                 {item}
                             </h2>
