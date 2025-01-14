@@ -35,6 +35,9 @@ const Hero = () => {
                     </Button>
                 </div>
             </div>
+            <div className="text-white w-full flex justify-center items-center text-center cursor-pointer relative">
+                <a href="https://www.github.com/vineet-op" className="font-extralight text-base hover:text-yellow-500">Created with patience ❤️ @Vineet Jadhav</a>
+            </div>
         </main>
     );
 };
