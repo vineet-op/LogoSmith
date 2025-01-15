@@ -7,10 +7,10 @@ export async function POST(req) {
 
     try {
         const AiPromptResult = await AiLogoPrompt.sendMessage(prompt)
-        const output = JSON.parse(AiPromptResult.response.text()).prompt
+        const output = await JSON.parse(AiPromptResult.response.text()).prompt
 
         const response = await axios.post(
-            process.env.HUGGING_FACE_LINK,
+            process.env.HUGGING_FACE_LINK2,
             output,
             {
                 headers: {
