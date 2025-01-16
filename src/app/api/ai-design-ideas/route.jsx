@@ -8,8 +8,8 @@ export async function POST(req) {
         const result = await AiModel.sendMessage(prompt)
         return NextResponse.json(JSON.parse(result.response.text()))
     } catch (error) {
-        return NextResponse({
-            error: error
+        return NextResponse.json({
+            error: error.message
         })
     }
 }

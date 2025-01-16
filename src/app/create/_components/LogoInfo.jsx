@@ -5,7 +5,7 @@ const LogoInfo = ({ onHandleInputChange, formData }) => {
     return (
         <div className='mt-10'>
             <LogoDescription title={'Enter Description of the logo'} description={'Bring the creative side of the logo'} />
-            <input
+            <textarea
                 type="text"
                 placeholder='Enter Logo Description'
                 value={formData?.info}
