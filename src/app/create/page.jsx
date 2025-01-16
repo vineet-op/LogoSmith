@@ -9,6 +9,7 @@ import LogoDesigns from "./_components/LogoDesigns"
 import LogoIdea from "./_components/LogoIdea"
 import { CircleArrowLeft, CircleArrowRight } from 'lucide-react'
 import GenerateLogo from '../generate-logo/page'
+import DotPattern from '@/components/ui/dot-pattern'
 
 const Create = () => {
 
@@ -44,7 +45,7 @@ const Create = () => {
 
 
     return (
-        <div className='mt-28 p-10 border rounded-xl 2xl:mx-72 bg-purple-200'>
+        <div className='mt-28 p-10 border rounded-xl 2xl:mx-72 bg-neutral-900'>
             {
                 steps <= 5 ? (
                     renderStepContent()
@@ -55,6 +56,7 @@ const Create = () => {
                 )
             }
             <div className="flex justify-between items-center mt-20 px-10">
+
                 {steps > 1 && steps <= 5 && (
                     <Button className='font-mono bg-purple-300' onClick={() => setSteps((prev) => prev - 1)} variant="outline">
                         <CircleArrowLeft /> Previous
