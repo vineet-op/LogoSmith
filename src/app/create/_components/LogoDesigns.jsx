@@ -22,18 +22,18 @@ const LogoDesigns = ({ onHandleInputChange, formData }) => {
                             setLogoTheme(logo.title);
                             onHandleInputChange(logo)
                         }}
-                        className={`rounded-xl overflow-hidden shadow-lg cursor-pointer flex justify-center items-center flex-col ${LogoTheme === logo.title ? 'border-2 border-purple-400' : ''}`}>
+                        className={`rounded-xl overflow-hidden shadow-lg cursor-pointer flex justify-center items-center flex-col hover:border-purple-600 border ${LogoTheme === logo.title ? 'border-2 border-purple-400' : ''}`}>
 
                         <Image
                             src={logo.similarImageLink}
                             alt={logo.title}
                             height={250}
                             width={200}
-                            className="object-fill rounded-lg"
+                            className="object-fill rounded-lg bg-transparent w-40"
 
                         />
                         <div className='p-2'>
-                            <h3 className='text-lg font-medium'>{logo.title}</h3>
+                            <h3 className='text-lg font-medium text-white'>{logo.title}</h3>
                         </div>
                     </div>
                 ))}
