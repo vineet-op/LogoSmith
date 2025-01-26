@@ -14,8 +14,8 @@ const Hero = () => {
         <main>
             <div className="relative flex h-screen w-screen justify-center overflow-hidden rounded-lg bg-black p-20 md:shadow-xl">
                 <DotPattern className="absolute inset-0 opacity-20" />
-                <div className="relative flex flex-col items-center gap-4 z-10">
-                    <h1 className="text-white text-6xl font-bold pt-44 text-center font-mono">
+                <div className="flex flex-col items-center gap-4 z-10">
+                    <h1 className="text-white text-6xl  font-bold pt-44 text-center font-mono">
                         LogoSmith AI
                     </h1>
                     <AnimatedShinyText
