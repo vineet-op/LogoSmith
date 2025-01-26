@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Logosmith AI
 
-## Getting Started
+**Create Custom Logos in Minutes with AI!**
 
-First, run the development server:
+Logosmith AI is an intuitive logo maker that generates unique, professional logos based on a few simple questions. With cutting-edge AI technologies, Logosmith makes it easy for businesses, entrepreneurs, and creatives to get a custom logo quickly and effortlessly.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **AI-Generated Logos**: Generate high-quality logos by simply answering a few questions.
+- **Customizable Designs**: Choose from various design styles, colors, and typography options.
+- **Fast and Easy**: Simple interface for a quick logo generation process.
+- **Download Options**: Download logos in multiple formats PNG.
+- **Responsive Design**: Optimized for desktop and mobile use.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend**: [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [ShadCN UI](https://ui.shadcn.dev/)
+- **Backend**: [Gemini API](https://huggingface.co/gemini), [Hugging Face API](https://huggingface.co/)
+- **Deployment**: [Vercel](https://vercel.com/)
 
-## Learn More
+## Demo
 
-To learn more about Next.js, take a look at the following resources:
+Check out the demo video below to see Logosmith AI in action:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+https://github.com/user-attachments/assets/0dbd9a04-cbcd-4ea7-a9e0-1878883707b5
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Installation and Usage
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/logosmith-ai.git
+   cd logo
+   npm install
+   npm run dev
+       
