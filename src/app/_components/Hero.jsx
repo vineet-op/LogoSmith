@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion"
+import Image from "next/image";
 
 const Hero = () => {
 
@@ -11,7 +12,7 @@ const Hero = () => {
     const router = useRouter();
 
     return (
-        <section className="relative overflow-hidden h-screen py-20 md:py-36 bg-linear-to-r from-pink-200 via-purple-400 to-indigo-600 p-10">
+        <section className="relative overflow-x-hidden h-screen py-20 md:py-36 bg-linear-to-r from-pink-200 via-purple-400 to-indigo-600 p-10">
             {/* Background gradient elements */}
             <div className="absolute top-10 -left-20 w-[30rem] h-[30rem] bg-purple-600/20 rounded-full filter blur-[100px] opacity-70" />
             <div className="absolute bottom-10 -right-20 w-[30rem] h-[30rem] bg-purple-400/20 rounded-full filter blur-[100px] opacity-70" />
@@ -57,12 +58,10 @@ const Hero = () => {
                             transition={{ delay: 0.6, duration: 0.8 }}
                             className="flex flex-col sm:flex-row gap-4 mt-2"
                         >
-                            <Button size="lg" onClick={() => router.push('/create')} className="text-white text-lg px-8 shadow-lg transition duration-300 ease-in-out hover:border-2 border-purple-400 ">
+                            <Button size="lg" onClick={() => router.push('/create')} className="text-white text-lg px-8 shadow-lg transition duration-300 bg-purple-500 ease-in-out hover:border-2 border-purple-400 ">
                                 Create Your Logo
                             </Button>
-                            <Button size="lg" variant="outline" className="border-primary/30 text-lg px-8">
-                                See Examples
-                            </Button>
+
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0 }}
@@ -76,39 +75,23 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                        className="relative mx-auto lg:mr-0"
+                        className="relative mx-auto lg:mr-10"
                     >
-                        <div className="relative w-full max-w-md mx-auto lg:max-w-none">
-                            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-purple-700/30 bg-gradient-to-br from-gray-900 to-gray-800 backdrop-blur-sm">
-                                <div className="relative w-full h-full p-6">
-                                    <div className="absolute top-3 left-3 flex space-x-2">
-                                        <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                                        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                        <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                                    </div>
-
-                                    <div className="bg-gray-800/80 rounded-xl shadow-lg p-6 mt-4 backdrop-blur-sm border border-purple-700/20">
-                                        <div className="w-40 h-40 gradient-primary rounded-lg mx-auto mb-6 flex items-center justify-center shadow-lg">
-                                            <span className="text-white font-bold text-4xl">SV</span>
-                                        </div>
-                                        <div className="text-center">
-                                            <h3 className="font-bold text-xl text-white">StellarVision</h3>
-                                            <p className="text-sm text-purple-300/80">Technology & Innovation</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex gap-3 justify-center mt-6">
-                                        <div className="w-20 h-20 rounded-lg bg-purple-900/40 backdrop-blur-sm animate-pulse-slow border border-purple-700/30 shadow-lg"></div>
-                                        <div className="w-20 h-20 rounded-lg bg-purple-800/40 backdrop-blur-sm animate-pulse-slow border border-purple-700/30 shadow-lg" style={{ animationDelay: "0.5s" }}></div>
-                                        <div className="w-20 h-20 rounded-lg bg-purple-700/40 backdrop-blur-sm animate-pulse-slow border border-purple-700/30 shadow-lg" style={{ animationDelay: "1s" }}></div>
-                                    </div>
-                                </div>
+                        <div className="flex gap-2 justify-center items-center">
+                            <div className="bg-cyan-300 size-52 rounded-xl sm:my-2">
+                                <Image src="/adidas.jpg" alt="Image 1" width={52} height={52} className="rounded-xl w-full " />
                             </div>
-
-
-                            <div className="absolute -top-5 -right-5 w-24 h-24 rounded-full bg-purple-500/10 animate-pulse-slow"></div>
-                            <div className="absolute -bottom-5 -left-5 w-16 h-16 rounded-full bg-purple-700/20 animate-pulse-slow"></div>
-                            <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-8 h-40 rounded-full bg-gradient-to-b from-purple-600/30 to-transparent blur-md"></div>
+                            <div className="bg-cyan-300 size-52 rounded-xl">
+                                <Image src="/ghost.jpg" alt="Image 2" width={52} height={52} className="rounded-xl w-full" />
+                            </div>
+                        </div>
+                        <div className="flex gap-2 justify-center items-center">
+                            <div className="bg-cyan-300 size-52 rounded-xl">
+                                <Image src="/X.jpg" alt="Image 3" width={52} height={52} className="rounded-xl w-full h-full" />
+                            </div>
+                            <div className="bg-cyan-300 size-52 rounded-xl">
+                                <Image src="/Ikea.jpg" alt="Image 4" width={52} height={52} className="rounded-xl w-full h-full" />
+                            </div>
                         </div>
                     </motion.div>
                 </div>
