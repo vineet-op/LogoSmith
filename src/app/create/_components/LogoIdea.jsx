@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import LogoDescription from "./LogoDescription";
 import axios from 'axios';
 import Prompt from "../_data/Prompt";
+import { motion } from "framer-motion";
 
 const LogoIdea = ({ formData, onHandleInputChange }) => {
 
@@ -38,7 +39,11 @@ const LogoIdea = ({ formData, onHandleInputChange }) => {
     localStorage.setItem("formData", JSON.stringify(formData))
 
     return (
-        <div>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+        >
             <LogoDescription
                 title="Select the Logo Idea"
                 description="Select the Logo Idea which matches your idea"
@@ -72,7 +77,7 @@ const LogoIdea = ({ formData, onHandleInputChange }) => {
                 </div>
             )
             }
-        </div>
+        </motion.div>
     );
 };
 

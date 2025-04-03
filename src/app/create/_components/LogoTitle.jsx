@@ -1,13 +1,16 @@
-
-import React, { useState } from 'react'
+import React from 'react'
 import LogoDescription from "./LogoDescription"
-
+import { motion } from "framer-motion"
 
 const LogoTitle = ({ onHandleInputChange, formData }) => {
 
     return (
-
-        <div className='my-10'>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className='my-10'
+        >
             <LogoDescription title={"Logo Title"} description={"Enter your title which goes with logo"} />
             <input
                 type="text"
@@ -16,7 +19,7 @@ const LogoTitle = ({ onHandleInputChange, formData }) => {
                 value={formData?.title}
                 onChange={(e) => onHandleInputChange(e.target.value)}
             />
-        </div>
+        </motion.div>
     )
 }
 

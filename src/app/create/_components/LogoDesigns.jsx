@@ -2,13 +2,19 @@ import React, { useState } from 'react';
 import LogoDescription from './LogoDescription';
 import logoThemes from "../_data/logoThemes";
 import Image from 'next/image';
+import { motion } from "framer-motion";
 
 const LogoDesigns = ({ onHandleInputChange, formData }) => {
 
     const [LogoTheme, setLogoTheme] = useState(formData?.design?.title)
 
     return (
-        <div className='px-10'>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className='px-10'
+        >
             <LogoDescription
                 title={'Select Theme of your choice'}
                 description={'Select the best theme which closely resembles your brand'}
@@ -38,7 +44,7 @@ const LogoDesigns = ({ onHandleInputChange, formData }) => {
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 

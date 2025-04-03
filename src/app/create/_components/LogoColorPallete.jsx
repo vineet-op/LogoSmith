@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
 import LogoDescription from './LogoDescription'
 import colorPalettes from "../_data/Colors"
+import { motion } from "framer-motion";
 
 const LogoColorPallete = ({ onHandleInputChange, formData }) => {
 
     const [selectedOptions, setselectedOptions] = useState(formData?.color)
 
     return (
-        <div>
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+        >
             <LogoDescription title={"Choose your favourite Color scheme"} description={'Pick the colors which reflects your brand and personality'} />
 
             <div className='grid grid-cols-2 md:grid-cols-3 gap-5 pt-5 px-10'>
@@ -32,7 +37,7 @@ const LogoColorPallete = ({ onHandleInputChange, formData }) => {
                     </div>
                 ))}
             </div>
-        </div >
+        </motion.div>
     )
 }
 

@@ -75,22 +75,22 @@ const Hero = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                        className="relative mx-auto lg:mr-10"
                     >
                         <div className="flex gap-2 justify-center items-center">
-                            <div className="bg-cyan-300 size-52 rounded-xl sm:my-2">
-                                <Image src="/adidas.jpg" alt="Image 1" width={52} height={52} className="rounded-xl w-full " />
+                            <div className="size-52 rounded-xl">
+                                <Image src="/adidas.jpg" alt="Image 1" width={500} height={500} className="rounded-xl  " />
                             </div>
-                            <div className="bg-cyan-300 size-52 rounded-xl">
-                                <Image src="/ghost.jpg" alt="Image 2" width={52} height={52} className="rounded-xl w-full" />
+                            <div className="size-52 rounded-xl">
+                                <Image src="/ghost.jpg" alt="Image 2" width={500} height={500} className="rounded-xl" />
                             </div>
                         </div>
-                        <div className="flex gap-2 justify-center items-center">
-                            <div className="bg-cyan-300 size-52 rounded-xl">
-                                <Image src="/X.jpg" alt="Image 3" width={52} height={52} className="rounded-xl w-full h-full" />
+                        <div className="flex gap-2 justify-center mt-2 items-center">
+                            <div className="size-52 rounded-xl">
+                                <Image src="/X.jpg" alt="Image 3" width={500} height={500} className="rounded-xl w-full lg:h-[210px] 
+                                h-[185px]" />
                             </div>
-                            <div className="bg-cyan-300 size-52 rounded-xl">
-                                <Image src="/Ikea.jpg" alt="Image 4" width={52} height={52} className="rounded-xl w-full h-full" />
+                            <div className="size-52 rounded-xl">
+                                <Image src="/Ikea.jpg" alt="Image 4" width={500} height={500} className="rounded-xl" />
                             </div>
                         </div>
                     </motion.div>

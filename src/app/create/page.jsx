@@ -10,6 +10,7 @@ import LogoIdea from "./_components/LogoIdea"
 import { CircleArrowLeft, CircleArrowRight } from 'lucide-react'
 import GenerateLogo from '../generate-logo/page'
 import DotPattern from '@/components/ui/dot-pattern'
+import { motion } from "framer-motion"
 
 const Create = () => {
 
@@ -55,7 +56,7 @@ const Create = () => {
                     </div>
                 )
             }
-            <div className="flex justify-between items-center mt-20 px-10">
+            <motion.div className="flex justify-between items-center mt-20 px-10" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
 
                 {steps > 1 && steps <= 5 && (
                     <Button className='font-mono bg-purple-300' onClick={() => setSteps((prev) => prev - 1)} variant="outline">
@@ -67,8 +68,7 @@ const Create = () => {
                         Next <CircleArrowRight />
                     </Button>
                 ) : null}
-            </div>
-
+            </motion.div>
         </div>
     )
 }
